@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
- 
+
     <title>Tarea JavaScript</title>
 </head>
 
@@ -129,7 +129,7 @@
 
 
         let bloquesito = '';
-         const peliculas = [
+        const peliculas = [
             {
                 nombre: 'Viernes 13 - Jason',
                 link: 'https://www.youtube.com/watch?v=V75dMMIW2B4',
@@ -143,14 +143,34 @@
                 link: 'https://www.facebook.com',
             },
         ];
-     
+
 
         peliculas.forEach(pelicula => {
-            let a = document.createElement('a'); 
+            let a = document.createElement('a');
             a.href = pelicula.link;
-            a.innerHTML = `${pelicula.nombre}<br>`; 
+            a.innerHTML = `${pelicula.nombre}<br>`;
             document.querySelector('.mostrarP').appendChild(a);
         });
+
+    </script>
+
+    <script>
+        const MostrarCines = document.querySelector('.MostrarC');
+        const cine = {
+            nombre: 'CinePlanet',
+            ciudad: 'Lima',
+            costodefuncion: 'Direccion',
+            direccion: 'AV.Miraflores',
+            //METODO
+            mostrar: function(){
+                let cine = Object.keys(this).map(function(key){
+                    return `${key}: ${this[key]}`;
+                }.bind(this));
+                return cine;
+            }
+        }
+        document.querySelector('.MostrarC').innerHTML = cine.mostrar();
+
     </script>
 </body>
 
