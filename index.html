@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,10 +18,10 @@
     </div>
 
     <script>
-        let colorpicker = document.getElementById('colorpicker');
+        let colorpicker = document.querySelector('#colorpicker');
         setInterval(()=>{
             let color = colorpicker.value;
-            document.getElementsByClassName('block')[0].style.backgroundColor = color;
+            document.querySelector('.block').style.backgroundColor = color;
         }, 200);
     </script>
 </body>
