@@ -163,13 +163,17 @@
             direccion: 'AV.Miraflores',
             //METODO
             mostrar: function(){
-                let cine = Object.keys(this).map(function(key){
-                    return `${key}: ${this[key]}`;
-                }.bind(this));
-                return cine;
+                for (var propiedad in cine) {
+                    if (propiedad != "mostrar") {
+                        document.querySelector(".MostrarC").innerHTML += propiedad + ": " + cine[propiedad] + "<br>";
+                    }
+                }
+               
             }
         }
-        document.querySelector('.MostrarC').innerHTML = cine.mostrar();
+        cine.mostrar();
+       
+        
 
     </script>
 </body>
