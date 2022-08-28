@@ -129,28 +129,44 @@
 
 
         let bloquesito = '';
-        const peliculas = [
-            {
-                nombre: 'Viernes 13 - Jason',
-                link: 'https://www.youtube.com/watch?v=V75dMMIW2B4',
-            },
-            {
-                nombre: 'Shuek',
-                link: 'https://www.youtube.com',
-            },
-            {
-                nombre: 'Soy Leyenda',
-                link: 'https://www.facebook.com',
-            },
-        ];
+        // const peliculas = [
+        //     {
+        //         nombre: 'Viernes 13 - Jason',
+        //         link: 'https://www.youtube.com/watch?v=V75dMMIW2B4',
+        //     },
+        //     {
+        //         nombre: 'Shuek',
+        //         link: 'https://www.youtube.com',
+        //     },
+        //     {
+        //         nombre: 'Soy Leyenda',
+        //         link: 'https://www.facebook.com',
+        //     },
+        // ];
+        const peliculas=['Viernes 13 - Jason','Shuek','Soy Leyenda'];
+           
+           const index = peliculas.findIndex(function(pelicula){
+               return pelicula === 'Viernes 13 - Jason';
+           } );
+
+              console.log("El indice de Viernes 13 - Jason es: " + index);
+ 
+
+                peliculas.forEach(function(pelicula,index){ 
+                    let pelicula_02 = "https://www.youtube.com";
+                    let pelicula_03 = "https://www.facebook.com";
+                    if (index == 0) {
+                        bloquesito += `<li><a href="https://www.youtube.com/watch?v=V75dMMIW2B4">${pelicula}</a> </li>`;
+                    } else if (index == 1) {
+                        bloquesito += `<li><a href="${pelicula_02}">${pelicula}</a></li>`;
+                    } else if (index == 2) {
+                        bloquesito += `<li><a href="${pelicula_03}">${pelicula}</a></li>`;
+                    }
+                } );
 
 
-        peliculas.forEach(pelicula => {
-            let a = document.createElement('a');
-            a.href = pelicula.link;
-            a.innerHTML = `${pelicula.nombre}<br>`;
-            document.querySelector('.mostrarP').appendChild(a);
-        });
+                document.querySelector('.mostrarP').innerHTML = bloquesito;
+            
 
     </script>
 
